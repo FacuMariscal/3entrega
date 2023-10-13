@@ -6,18 +6,17 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="" method="POST">{% csrf_token %}
+    <form action="" method="POST"> {% csrf_token %}
 
-        <table>
 
-            {{form2.as_table}}
+        {{form.as_p}}
 
-        </table>
 
         <input type="submit" value="Enviar">
+        <a href="{% url 'PersonajeLista' %}"> Regresar </a>
+        
 
 
     </form>
-    
 </body>
 </html>

@@ -23,6 +23,16 @@ class personaje(models.Model):
     resistencia = models.IntegerField()
     tipo = models.CharField(max_length=20)
 
+class vestimenta(models.Model):
+    def __str__(self):
+        return f"{self.nombre}"
+    
+    nombre = models.CharField(max_length=20)
+    partesuperior = models.ImageField()
+    parteposterior = models.ImageField()
+    calzado = models.ImageField()
+    
+
    
 
 

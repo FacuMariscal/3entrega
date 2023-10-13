@@ -2,6 +2,9 @@ from django.shortcuts import render
 from App1.models import *
 from django.http import HttpResponse
 from App1.forms import *
+from django.views.generic import ListView
+from django.views.generic.detail import DetailView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
 
 def inicio(request):
@@ -33,20 +36,6 @@ def formulario(request):
 
     return render(request, "App1/Formulario.html", {"form1":f1})
 
-def formulario2(request):
-    if request.method == "POST":
-        f2= Formulario2(request.POST)
-        if f2.is_valid():
-
-            info = f2.cleaned_data
-            pj = personaje(name=info["name"],fuerza=info["fuerza"],velocidad=info["velocidad"],resistencia=info["resistencia"],tipo=info["tipo"])
-            pj.save()
-            return render(request, "App1/inicio.html")
-    else:
-        f2=Formulario2()
-    return render(request, "App1/Formulario2.html", {"form2":f2})
-
-
 
 def buscarnickname(request):
     return render(request, "App1/buscarnick.html")
@@ -62,3 +51,24 @@ def resultado(request):
 
 
     return HttpResponse(respuesta)
+
+class ListaPersonaje(ListView):
+    model = personaje
+
+class DetallePersonaje(DetailView):
+    model = personaje
+
+class CrearPersonaje(CreateView):
+    model = personaje
+    success_url= "/App1/Personaje/list"
+    fields = ["name","fuerza","velocidad","resistencia","tipo"]  
+
+class ActualizarPersonaje(UpdateView):
+    model = personaje
+    success_url= "/App1/Personaje/list"
+    fields = ["name","fuerza","velocidad","resistencia","tipo"]     
+
+class BorrarPersonaje(DeleteView):
+    model = personaje
+    success_url= "/App1/Personaje/list"
+    fields = ["name","fuerza","velocidad","resistencia","tipo"] 

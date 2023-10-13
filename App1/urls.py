@@ -8,6 +8,16 @@ urlpatterns = [
     path("Formulario/", formulario, name="Formulario"),
     path("Buscarnick", buscarnickname, name="buscarnick"),
     path("resultados/", resultado, name="Resultadonick"),
-    path("Formulario2/", formulario2, name="Formulario2"),
-    path("Personajes/", Personaje, name= "Personaje"),
-]
+
+    #CRUD de personajes
+
+    path("Personaje/list/", ListaPersonaje.as_view(), name="PersonajeLista"),
+    path("Personaje/<int:pk>", DetallePersonaje.as_view(), name="PersonajeDetalle"),
+    path("Personaje/crear/", CrearPersonaje.as_view(), name="PersonajeCrear"),
+    path("Personaje/editar/<int:pk>", ActualizarPersonaje.as_view(), name="PersonajeEditar"),
+    path("Personaje/eliminar/<int:pk>", BorrarPersonaje.as_view(), name="PersonajeEliminar"),
+
+
+
+
+]   
