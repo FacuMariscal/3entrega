@@ -5,9 +5,9 @@ from App1.views import *
 urlpatterns = [
     path("",inicio, name="Inicio"),
     path("Usuarios", Usuario, name="Usuarios"),
-    path("Rangos", Rango, name="Rangos"),
-    path("Fechadecreacion", FechaDeCreacion, name="Fechasdecreacion"),
     path("Formulario/", formulario, name="Formulario"),
     path("Buscarnick", buscarnickname, name="buscarnick"),
     path("resultados/", resultado, name="Resultadonick"),
+    path("Formulario2/", formulario2, name="Formulario2"),
+    path("Personajes/", Personaje, name= "Personaje"),
 ]

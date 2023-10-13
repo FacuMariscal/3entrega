@@ -1,18 +1,28 @@
 from django.db import models
 
-class nickname(models.Model):
+class usuario(models.Model):
+
+    def __str__(self):
+        return f"{self.nombre}"
 
     nombre = models.CharField(max_length=20)
     contraseña = models.CharField(max_length=20)
-
-class rango(models.Model):
-    
     nivel = models.IntegerField()
     liga = models.CharField(max_length=15)
-     
-class fechadecreacion(models.Model):
-
     fecha = models.DateField() 
+    email = models.EmailField()
+    
+class personaje(models.Model):
+
+    def __str__(self):
+        return f"{self.name}"
+
+    name = models.CharField(max_length=20)
+    fuerza = models.IntegerField()
+    velocidad = models.IntegerField()
+    resistencia = models.IntegerField()
+    tipo = models.CharField(max_length=20)
+
    
 
 
