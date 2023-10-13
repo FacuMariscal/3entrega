@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% for usuario in object_list %}
+    <p>Nombre: {{usuario.nombre}} </p>
+  
+    <a href="{% url 'UsuarioDetalle' usuario.id %}">Ver usuario</a>
+    <a href="{% url 'UsuarioEditar' usuario.id %}"> Editar </a>
+    <a href="{% url 'UsuarioEliminar' usuario.id %}"> Eliminar Usuario </a>
+
+
+    #########################################
+
+
+
+    {% endfor %}
+    <br>
+    <a href="{% url 'UsuarioCrear'  %}"> Crear Usuario </a>
+
+
+</body>
+</html>

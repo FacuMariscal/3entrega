@@ -1,16 +1,18 @@
 from django.db import models
 
+
 class usuario(models.Model):
 
     def __str__(self):
         return f"{self.nombre}"
 
     nombre = models.CharField(max_length=20)
-    contraseña = models.CharField(max_length=20)
+    apellido = models.CharField(max_length=20)
     nivel = models.IntegerField()
     liga = models.CharField(max_length=15)
     fecha = models.DateField() 
     email = models.EmailField()
+    imagen = models.ImageField(upload_to="media/", null=True,blank=True)
     
 class personaje(models.Model):
 
@@ -23,15 +25,15 @@ class personaje(models.Model):
     resistencia = models.IntegerField()
     tipo = models.CharField(max_length=20)
 
-class vestimenta(models.Model):
-    def __str__(self):
-        return f"{self.nombre}"
+#class vestimenta(models.Model):
+    #def __str__(self):
+        #return f"{self.nombre}"
     
-    nombre = models.CharField(max_length=20)
-    partesuperior = models.ImageField()
-    parteposterior = models.ImageField()
-    calzado = models.ImageField()
-    
+    #nombre = models.CharField(max_length=20)
+    #partesuperior = models.ImageField()
+    #parteposterior = models.ImageField()
+    #calzado = models.ImageField()
+
 
    
 
