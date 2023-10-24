@@ -20,8 +20,29 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item"><a class="nav-link" href="{% url 'Inicio' %}">Inicio</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'UsuarioLista' %}">Usuario</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'PersonajeLista' %}">Personajes</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'VestimentaLista' %}">Vestimenta</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'ArmaLista' %}">Arma</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'EscudoLista' %}">Escudo</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'Acercademi' %}">Acerca De Mi</a></li>
+
+                        {% if request.user.is_authenticated %}
+
+                        <li class="nav-item"><a class="nav-link" href="{% url 'EditarUsuario' %}">Editar Usuario</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'Logout' %}">Cerrar Sesion</a></li>
+
+                        {% else %}
+
+                        <li class="nav-item"><a class="nav-link" href="{% url 'Registro' %}">Registrarse</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Iniciar Sesion</a></li>
+                        {% endif %}
+
+
+
+
+
+
+
                     </ul>
                 </div>
             </div>

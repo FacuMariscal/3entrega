@@ -1,17 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <p>Nombre: {{personaje.name}}</p>
+{% extends "App1/padre2.html" %}
+
+{% load static %}
+
+{% block titulo %}
+{{personaje.nombre}}
+{% endblock %}
+
+{% block description %}
+<p>Nombre: {{personaje.nombre}}</p>
     <p>Fuerza: {{personaje.fuerza}}</p>
     <p>Velocidad: {{personaje.velocidad}}</p>
     <p>Resistencia: {{personaje.resistencia}}</p>
     <p>Tipo: {{personaje.tipo}}</p>
 
     <a href="{% url 'PersonajeLista' %}"> Regresar </a>
-</body>
-</html>
+{% endblock %}

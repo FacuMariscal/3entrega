@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% load static %}
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Scrolling Nav - Start Bootstrap Template</title>
+        <link rel="icon" type="image/x-icon" href="{% static 'App1/assets/favicon.ico' %}" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{% static 'App1/css/styles.css' %}" rel="stylesheet" />
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+            <div class="container px-4">
+                <a class="navbar-brand" href="#page-top"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="{% url 'Inicio' %}">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'PersonajeLista' %}">Personajes</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'VestimentaLista' %}">Vestimenta</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'ArmaLista' %}">Arma</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'EscudoLista' %}">Escudo</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'Acercademi' %}">Acerca De Mi</a></li>
+
+
+
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Header-->
+        <header class="bg-primary bg-gradient text-white">
+            <div class="container px-4 text-center">
+                <h1 class="fw-bolder">
+
+                    {% block titulo %}
+                     Informacion del creador
+                    {% endblock %}
+
+
+                </h1>
+                <p class="lead">
+                    {% block description %}
+
+                    {% endblock %}
+
+
+
+                </p>
+            </div>
+        </header>
+        <!-- About section-->
+        
+        <!-- Services section-->
+        
+        <!-- Contact section-->
+        <section id="contact">
+            <div class="container px-4">
+                <div class="row gx-4 justify-content-center">
+                    <div class="col-lg-8">
+                        <h2>Sobre mi:</h2>
+                        <p class="lead">Hola mi nombre es Facundo Mariscal, tengo 20 años y soy de Argentina. Estoy haciendo la carrera de Ingenieria en Informatica en la "Universidad nacional de tres de febrero".
+                            Me interesa mucho los temas relacionados a la programacion y mi sueño es poder en el futuro poder vivir de esto. Actualmente estoy trabajando de repartidor con mis papas. Desde siempre me gusto mucho jugar a los videojuegos, imagino que se habran dado cuenta por la pagina, y tambien amo jugar al futbol.
+                        
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Footer-->
+        <footer class="py-5 bg-dark">
+            <div class="container px-4"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2023</p></div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="{% static 'App1/js/scripts.js' %}"></script>
+    </body>
+</html>

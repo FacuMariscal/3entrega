@@ -1,0 +1,24 @@
+{% extends "App1/padre2.html" %}
+
+{% load static %}
+
+{% block titulo %}
+{{vestimenta.nombre}}
+{% endblock %}
+
+{% block description %}
+<p>Nombre:{{vestimenta.nombre}}</p>
+{% if vestimenta.partesuperior %}
+<p><img src="{{vestimenta.partesuperior.url}}" alt=""></p>
+{% endif %}
+
+{% if vestimenta.parteposterior %}
+<p><img src="{{vestimenta.parteposterior.url}}" alt=""></p>
+{% endif %}
+
+{% if vestimenta.calzado %}
+<p><img src="{{vestimenta.calzado.url}}" alt=""></p>
+{% endif %}
+
+<a href="{% url 'VestimentaLista' %}">Regresar</a>
+{% endblock %}

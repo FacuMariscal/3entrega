@@ -1,0 +1,22 @@
+{% extends "App1/padre2.html" %}
+
+{% load static %}
+
+{% block titulo %}
+Eliminar
+{% endblock %}
+
+{% block description %}
+<form action="" method="POST"> {% csrf_token %}
+
+
+    <p>¿Estas seguro que quieres eliminar esta arma?</p>
+
+
+    <input type="submit" value="Enviar">
+    <a href="{% url 'ArmaLista' %}"> Regresar </a>
+    
+
+
+</form>
+{% endblock %}

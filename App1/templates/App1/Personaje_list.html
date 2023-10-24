@@ -1,14 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    {% for personaje in object_list %}
+{% extends "App1/padre2.html" %}
 
-    <p>Nombre: {{personaje.name}}</p>
+{% load static %}
+
+{% block titulo %}
+Personajes
+{% endblock %}
+
+{% block description %}
+{% for personaje in object_list %}
+
+    <p>Nombre: {{personaje.nombre}}</p>
 
     <a href="{% url 'PersonajeDetalle' personaje.id %}"> Ver Personaje </a>
     <a href="{% url 'PersonajeEditar' personaje.id %}"> Editar </a>
@@ -16,12 +17,10 @@
     
 
 
-    #########################################
+    <br>_______________________________________
     
     {% endfor %}
     
     <br>
     <a href="{% url 'PersonajeCrear'  %}"> Crear Personaje </a>
-    
-</body>
-</html>
+{% endblock %}

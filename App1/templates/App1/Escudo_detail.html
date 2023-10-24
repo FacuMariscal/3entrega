@@ -1,0 +1,17 @@
+{% extends "App1/padre2.html" %}
+
+{% load static %}
+
+{% block titulo %}
+{{escudo.nombre}}
+{% endblock %}
+
+{% block description %}
+<p>Nombre: {{escudo.nombre}}</p>
+    <p>Durabilidad: {{escudo.durabilidad}}</p>
+    {% if escudo.imagen %}
+    <p><img src="{{escudo.imagen.url}}" alt=""></p>
+{% endif %}
+    
+    <a href="{% url 'EscudoLista' %}"> Regresar </a>
+{% endblock %}
