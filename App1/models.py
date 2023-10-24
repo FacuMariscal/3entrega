@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
   
 class personaje(models.Model):
 
@@ -37,6 +38,9 @@ class escudo(models.Model):
     durabilidad = models.IntegerField()
     imagen = models.ImageField(upload_to="escudos", null=True,blank=True)
     
+class avatar(models.Model):
+    usuario = models.ForeignKey(User, on_delete=models.CASCADE)
+    imagen = models.ImageField(upload_to="avatares", null=True, blank=True)
 
 
    

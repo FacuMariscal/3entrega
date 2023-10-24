@@ -4,17 +4,19 @@ from App1.views import *
 from django.contrib.auth.views import LogoutView
 from django.conf import settings
 from django.conf.urls.static import static
+from App1.forms import *
 
 
 urlpatterns = [
-    path("login", iniciosesion, name="login"),
-    path("registro", registro, name="Registro"),
+    path("login/", iniciosesion, name="login"),
+    path("registro/", registro, name="Registro"),
+    path("agregar/", agregarAvatar, name="Avatarimagen"),
     path("",inicio, name="Inicio"),
     path("Acercademi",yo, name="Acercademi"),
     path("Buscarnick", buscarnickname, name="buscarnick"),
     path("resultados/", resultado, name="Resultadonick"),
     path("logout", LogoutView.as_view(template_name="App1/logout.html"), name="Logout"),
-    path("editar",editarUsuario, name = "EditarUsuario"),
+    path("editar/",editarUsuario, name = "EditarUsuario"),
 
     #CRUD de personajes
 

@@ -26,7 +26,6 @@
                         <li class="nav-item"><a class="nav-link" href="{% url 'EscudoLista' %}">Escudo</a></li>
                         {% if request.user.is_authenticated %}
                         <p style="color: white;"> Hola {{user.username}}</p>
-                        
                         {% with user.avatar_set.first as miAvatar %}
 
                         {% if miAvatar %}
@@ -57,7 +56,7 @@
 
                     {% block titulo %}
 
-                    Aca podras registrarte
+                    Aca podras agregar un avatar
                     {% endblock %}
 
 
@@ -65,11 +64,11 @@
                 <p class="lead">
                     {% block description %}
 
-                    <form action="" method="POST">{% csrf_token %}
+                    <form action="" method="POST" enctype="multipart/form-data">{% csrf_token %}
 
                         {{formulario.as_p}}
 
-                        <button type="submit">Registrarse</button>
+                        <button type="submit">Enviar</button>
 
 
 
