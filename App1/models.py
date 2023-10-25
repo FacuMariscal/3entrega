@@ -18,7 +18,7 @@ class vestimenta(models.Model):
     
     nombre = models.CharField(max_length=20)
     partesuperior = models.ImageField(upload_to="ropa", null=True,blank=True)
-    parteposterior = models.ImageField(upload_to="ropa", null=True,blank=True)
+    parteinferior = models.ImageField(upload_to="ropa", null=True,blank=True)
     calzado = models.ImageField(upload_to="ropa", null=True,blank=True)
 
 class arma(models.Model):

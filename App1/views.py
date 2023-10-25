@@ -11,7 +11,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
 
 
-
+###########Login
 def iniciosesion(request):
     if request.method == "POST":
         form = AuthenticationForm(request, data =request.POST)
@@ -93,8 +93,8 @@ def agregarAvatar(request):
     return render(request, "App1/agregarAvatar.html",{"formulario":form})
 
 
-
-
+##############Platillas utiles
+@login_required
 def inicio(request):
     return render(request, "App1/inicio.html")
 
@@ -104,7 +104,7 @@ def yo(request):
 def Personaje(request):
     return render(request, "App1/personajes.html")
 
-
+########### Buscador
 
 def buscarnickname(request):
     return render(request, "App1/buscarnick.html")
@@ -156,18 +156,18 @@ class DetalleVestimenta(LoginRequiredMixin, DetailView):
 class CrearVestimenta(LoginRequiredMixin, CreateView):
     model = vestimenta
     success_url= "/App1/Vestimenta/list"
-    fields = ["nombre","partesuperior","parteposterior","calzado"]  
+    fields = ["nombre","partesuperior","parteinferior","calzado"]  
 
 class ActualizarVestimenta(LoginRequiredMixin, UpdateView):
     model = vestimenta
     success_url= "/App1/Vestimenta/list"
-    fields = ["nombre","partesuperior","parteposterior","calzado"]  
+    fields = ["nombre","partesuperior","parteinferior","calzado"]  
     
 
 class BorrarVestimenta(LoginRequiredMixin, DeleteView):
     model = vestimenta
     success_url= "/App1/Vestimenta/list"
-    fields = ["nombre","partesuperior","parteposterior","calzado"]  
+    fields = ["nombre","partesuperior","parteinferior","calzado"]  
 
 ##### Armas
 
